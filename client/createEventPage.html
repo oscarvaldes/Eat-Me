@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>On-Hour-Time</title>
+    <script src="./jQuery.js"></script>
+    <script src="./bootstrap.min.js"></script>
+    <script src="./createEvent.js"></script>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="createEventStyle.css">
+    <link rel="stylesheet" href="jquery-ui.min.css">
+    <script src="jquery-ui.min.js"></script>
+</head>
+<body>
+<div class="jumbotron">
+    <h1 id="title" class="text-center">Eat Me</h1>
+    <h6 id="subtitle" class="text-center">Never Lose A Recipe Again</h6>
+</div>
+
+<div id="mainCreateEvent">
+    <div id="createEventDiv">
+        <p id="createEvent">Add Recipe</p><br><br>
+    </div>
+    <div id='clock'></div>
+
+</div>
+
+<div id="content"></div>
+
+
+<div class="container">
+    <div id="mainCont" class="row">
+        <div class="col-md-4 float-left">
+                <h2>Details</h2>
+                <input id="FoodName" type="text" name="FoodName" placeholder="Food Name"><br><br>
+                <textarea id="description" name="description" placeholder="Recipe Details"></textarea><br><br>
+                <input type='file' id='getval' name="background-image" /><br/><br/>
+
+            <input type="text" placeholder="Date of Event" id="datepicker"><br>
+            <input id="Add" type="submit" name="Add" value="Add">
+            <input id="cancelSubmit" type="submit" name="cancelSubmit" value="Cancel">
+        </div>
+    </div>
+
+
+
+
+    <hr>
+
+    <footer>
+        <p>&copy; On-Hour-Time 2017</p>
+    </footer>
+</div>
+
+
+</body>
+
+<script>
+    document.getElementById('getval').addEventListener('change', readURL, true);
+    function readURL(){
+        var file = document.getElementById("getval").files[0];
+        var reader = new FileReader();
+        reader.onloadend = function(){
+            document.getElementById('clock').style.backgroundImage = "url(" + reader.result + ")";
+        }
+        if(file){
+            reader.readAsDataURL(file);
+        }else{
+        }
+    }
+</script>
+
+
+</html>

@@ -1,0 +1,32 @@
+/* You can add global styles to this file, and also import other style files */
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+.jumbotron{
+    background-color: #ec971f;
+}
+#title{
+    color: white;
+    font-family: 'Indie Flower', cursive;
+}
+#subtitle{
+    color: white;
+}
+#login-alert{
+    display: none;
+    width: 172px;
+}
+#password-alert{
+    display: none;
+    width: 172px;
+}
+/*#login-card{*/
+
+    /*float:right;*/
+    /*!*margin-left: .5em;*!*/
+    /*!*margin-right: .5em;*!*/
+/*}*/
