@@ -17,8 +17,12 @@ $(document).ready(function () {
             else if(data ==='password'){
                 $('#password-alert').show();
             }
-            else{
-                window.location.href = "http://localhost:3000/createEventPage.html";//change to landing page
+            else if(data ==='true' ){
+
+                window.location.href = "http://localhost:3000/landingpage";//change to landing page
+            }
+            else {
+                console.log('Unresolved ERROR!');
             }
 
 

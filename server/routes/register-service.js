@@ -41,7 +41,7 @@ router.post('/', function(req, res, next) {
     db.query(sql, function(err, rows, fields) {
 
         if(rows.length==0){
-            console.log('user does not exist')
+            console.log('user does not exist');
             db.query(insert, function(err, rows, fields) {
                 if(err){
                     console.log(err);
@@ -51,7 +51,7 @@ router.post('/', function(req, res, next) {
             res.send(true);
         }
         else{
-            console.log('user already exists')
+            console.log('user already exists');
             res.send(false);
         }
     }); //query
@@ -60,7 +60,18 @@ router.post('/', function(req, res, next) {
 
 }); //router.post
 router.get('/', function(req, res, next) {
+    res.sendFile(path.join(__dirname, '../../views/registerPage.html'));
 
 }); //router.get
+
+//helper functions
+function require_authentication(req, res, next) {
+    if (res.locals.user != null) {
+        next();
+    } else {
+        res.redirect('/');
+        return;
+    }
+}
 
 module.exports = router;

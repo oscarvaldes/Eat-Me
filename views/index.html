@@ -2,26 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>On-Hour-Time</title>
+    <title>Eat-Me</title>
     <script src="./jQuery.js"></script>
     <script src="./bootstrap.min.js"></script>
     <script src="./bootbox.min.js"></script>
     <script src="./static.js"></script>
-    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="./bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
 <div class="jumbotron">
-    <h1 id="title" class="text-center">Eat Me</h1>
+    <a href="./"><h1 id="title" class="text-center">Eat Me</h1></a>
+    <div class="text-center"><img src="./basket.png" width="5%"></div>
     <h6 id="subtitle" class="text-center">Never Losing Recipes Again</h6>
+
+
 </div>
 <div class="container">
     <div class="row">
-        <div class="col-md-6 float-left">
-            <h3>Why use Eat Me </h3>
-            <p>More to Come</p>
+        <div class="col-md-8 float-left">
+            <h3>Why use Eat Me? </h3>
+            <p>Have you ever found a recipe that you love or that you want to try? You write it down on a piece of paper
+                or sticky note and you lose it. Well with Eat Me you'll never lose another recipe again!</p>
         </div>
         <div id="login-card" class="col-md-4 col-md-offset-4">
             <h3>Member Login</h3>
@@ -31,7 +35,7 @@
                     <input id="email" type="email" name="email" placeholder="Email" required><br><br>
                     <input id="password" type="password" name="password" placeholder="Password" required><br><br>
                     <input id="login" type="submit" name="login" class="btn-primary" value="Login">
-                    <a href="./registerPage.html">Register</a>
+                    <a href="./register">Register</a>
                     <div class="alert alert-danger" id="login-alert">
                         <button type="button" class="close" data-dismiss="alert">x</button>
                         <strong>Email not Found!</strong>

@@ -15,6 +15,7 @@ body {
 }
 #subtitle{
     color: white;
+    margin-top: 1em;
 }
 #warning-alert{
     display: none;
