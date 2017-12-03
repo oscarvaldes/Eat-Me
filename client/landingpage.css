@@ -7,89 +7,80 @@ body {
     /*overflow:hidden;*/
     font-family: 'Open Sans', sans-serif;
 }
-.jumbotron{
+
+.jumbotron {
     background-color: #ec971f;
 }
-#title{
+
+#title {
     color: white;
     font-family: 'Indie Flower', cursive;
 }
-#subtitle{
+
+#subtitle {
     color: white;
     margin-top: 1em;
 }
-/*#login-card{*/
 
-    /*float:right;*/
-    /*!*margin-left: .5em;*!*/
-    /*!*margin-right: .5em;*!*/
-/*}*/
-
-.container{
+.container {
     display: none;
 
 }
 
-
-#scheduleBorder{
+#scheduleBorder {
     width: 90px;
     text-align: center;
 }
 
-#eventName{
+#eventName {
     width: 300px;
 
 }
 
-#description{
-    width: 300px;
+#description {
+    width: 500px;
     height: 150px;
 
 }
 
-#mainCont{
+#mainCont {
 
-    /*background-color: blue;*/
     margin-left: 15%;
 }
 
-#midCont{
+#midCont {
 
-    /*background-color: blue;*/
     margin-left: 4%;
 }
 
-#mainCreateEvent{
+#createEventDiv {
     margin-left: 46%;
 }
 
-#createEvent{
+#createEvent {
     border: 2px;
     border-style: solid;
     text-align: center;
     display: inline;
     padding: 1em
 }
-#createEvent:hover{
+
+#createEvent:hover {
     background-color: lightgray;
 }
-.selected{
-    background-color: blue;
-}
 
-#clock{
-    background-image:url('');
-    background-size:cover;
+#clock {
+    background-image: url('');
+    background-size: cover;
     background-position: center;
-    height: 250px; width: 250px;
-    /*border: 1px solid #bbb;*/
+    height: 250px;
+    width: 250px;
+
 }
 
-#content{
-    text-align: center;
-    background-color: gray;
+#content {
+    background-color: lightgray;
     width: 500px;
     margin-left: 32%;
-
 
 }

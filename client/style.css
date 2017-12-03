@@ -25,6 +25,9 @@ body {
     display: none;
     width: 172px;
 }
+#logout{
+    display: none;
+}
 /*#login-card{*/
 
     /*float:right;*/

@@ -5,7 +5,7 @@
     <title>Eat-Me</title>
     <script src="./jQuery.js"></script>
     <script src="./bootstrap.min.js"></script>
-    <script src="./createEvent.js"></script>
+    <script src="./landingpage.js"></script>
     <link rel="stylesheet" href="./bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
@@ -15,6 +15,7 @@
 </head>
 <body>
 <div class="jumbotron">
+    <input id="logout" type="submit" name="logout" class="btn-primary float-right" value="Logout"><br><br>
     <a href="./"><h1 id="title" class="text-center">Eat Me</h1></a>
     <div class="text-center"><img src="./basket.png" width="5%"></div>
     <h6 id="subtitle" class="text-center">Never Losing Recipes Again</h6>
@@ -25,27 +26,24 @@
         <p id="createEvent">Add Recipe</p><br><br>
     </div>
     <div id='clock'></div>
+    <div id="content"></div>
 
 </div>
-
-<div id="content"></div>
-
 
 <div class="container">
     <div id="mainCont" class="row">
         <div class="col-md-4 float-left">
-                <h2>Details</h2>
-                <input id="FoodName" type="text" name="FoodName" placeholder="Food Name"><br><br>
-                <textarea id="description" name="description" placeholder="Recipe Details"></textarea><br><br>
-                <input type='file' id='getval' name="background-image" /><br/><br/>
-
-            <input type="text" placeholder="Date of Event" id="datepicker"><br>
-            <input id="Add" type="submit" name="Add" value="Add">
-            <input id="cancelSubmit" type="submit" name="cancelSubmit" value="Cancel">
+            <h2>Details</h2>
+            <form id="data">
+                <input id="FoodName" type="text" name="FoodName" placeholder="Food Name" required><br><br>
+                <textarea id="description" name="description" placeholder="Recipe Details" required></textarea><br><br>
+                <input type="text" id="getVal" name="background-image" placeholder="Url of Image" required/><br/><br/>
+                <input type="text" placeholder="Log Date" id="datePicker" required><br>
+                <input id="Add" type="submit" name="Add" value="Add">
+                <input id="cancelSubmit" type="submit" name="cancelSubmit" value="Cancel">
+            </form>
         </div>
     </div>
-
-
 
 
     <hr>
@@ -57,21 +55,5 @@
 
 
 </body>
-
-<script>
-    document.getElementById('getval').addEventListener('change', readURL, true);
-    function readURL(){
-        var file = document.getElementById("getval").files[0];
-        var reader = new FileReader();
-        reader.onloadend = function(){
-            document.getElementById('clock').style.backgroundImage = "url(" + reader.result + ")";
-        }
-        if(file){
-            reader.readAsDataURL(file);
-        }else{
-        }
-    }
-</script>
-
 
 </html>
