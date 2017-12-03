@@ -13,10 +13,19 @@ router.use(bodyParser.urlencoded({
   extended: true
 }));
 
+router.use(function setAuthLocal(req, res, next) {
+    if (req.session && req.session.user) {
+        res.locals.user = req.session.user;
+    } else {
+        res.locals.users = null;
+    }
+    next();
+});
+
 router.post('/',require_authentication, function(req, res, next) {
 
 }); //router.post
-router.get('/', function(req, res, next) {
+router.get('/',require_authentication, function(req, res, next) {
     res.sendFile(path.join(__dirname, '../../views/landingpage.html'));
 
 }); //router.get
@@ -27,7 +36,7 @@ function require_authentication(req, res, next) {
         next();
     } else {
         res.redirect('/');
-        return;
+
     }
 }
 
