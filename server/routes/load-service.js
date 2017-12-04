@@ -44,8 +44,17 @@ router.post('/', require_authentication, function (req, res, next) {
 
 }); //router.post
 router.get('/', require_authentication, function (req, res, next) {
-    console.log(req.query.email);
-    res.send(true);
+    var email = req.query.email;
+    var sql = 'SELECT * FROM `on-hour-time`.`' + email + '`';
+    db.query(sql, function (err, rows, fields) {
+        if (err) {
+            console.log(err);
+        }
+
+        res.send(rows);
+
+    });
+   // res.send(true);
 
 }); //router.get
 

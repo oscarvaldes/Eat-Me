@@ -11,7 +11,11 @@ $(document).ready(function () {
         dataType: 'text'                    // what type of data do we expect back from the server
     }).done(function (data, _, out) {
         // $('#content').prepend('<img id="clock" src="' + stringVal + '" />' + '<br />' + '<br />' + '<div id="clock">' + "Food Item: " + foodItem + '<br />' + '<br />' + "Log Date: " + date + '<br />' + '<br />' + "Recipe/Description: " + '<br />' + '<br />' + foodDescription + '</div>');
-        console.log('append here if any');
+        data = JSON.parse(data);
+        for(i=0;i <data.length;i++){
+            $('#content').prepend('<img id="clock" src="' + data[i].fileName + '" />' + '<br />' + '<br />' + '<div id="clock">' + "Food Item: " + data[i].foodName + '<br />' + '<br />' + "Log Date: " + data[i].date + '<br />' + '<br />' + "Recipe/Description: " + '<br />' + '<br />' + data[i].description + '</div>');
+
+        }
 
     }).fail(function (data) {
 

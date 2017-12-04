@@ -67,6 +67,7 @@ body {
 
 #AddRecipe:hover {
     background-color: lightgray;
+    cursor: pointer;
 }
 
 #clock {
