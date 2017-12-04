@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+* {-webkit-font-smoothing: antialiased;}
 html,
 body {
     width: 100%;
@@ -70,17 +71,13 @@ body {
     cursor: pointer;
 }
 
-#clock {
-    background-image: url('');
-    background-size: cover;
+.foodImage{
     background-position: center;
-    height: 250px;
-    width: 250px;
-
+    width: 100%;
+    margin-top: 2em;
 }
 
 #content {
-    background-color: lightgray;
     width: 500px;
     margin-left: 32%;
 

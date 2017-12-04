@@ -2,7 +2,7 @@ $(document).ready(function () {
 
     //Load users personal blog data (if any)
     data = {
-        email:window.name
+        email: window.name
     };
     $.ajax({
         type: 'GET',                       // define the type of HTTP verb we want to use (POST for our form)
@@ -10,10 +10,10 @@ $(document).ready(function () {
         data: data,                         // our data object
         dataType: 'text'                    // what type of data do we expect back from the server
     }).done(function (data, _, out) {
-        // $('#content').prepend('<img id="clock" src="' + stringVal + '" />' + '<br />' + '<br />' + '<div id="clock">' + "Food Item: " + foodItem + '<br />' + '<br />' + "Log Date: " + date + '<br />' + '<br />' + "Recipe/Description: " + '<br />' + '<br />' + foodDescription + '</div>');
         data = JSON.parse(data);
-        for(i=0;i <data.length;i++){
-            $('#content').prepend('<img id="clock" src="' + data[i].fileName + '" />' + '<br />' + '<br />' + '<div id="clock">' + "Food Item: " + data[i].foodName + '<br />' + '<br />' + "Log Date: " + data[i].date + '<br />' + '<br />' + "Recipe/Description: " + '<br />' + '<br />' + data[i].description + '</div>');
+        for (var i = 0; i < data.length; i++) {
+            var formatDate = new Date(Date.parse(data[i].date));
+            $('#content').prepend('<img class="foodImage" src="' + data[i].fileName + '" />' + "Food Item: ".bold() + data[i].foodName + '<br>' + '<br>' + "Date Posted: ".bold() + formatDate + '<br>' + '<br>' + "Recipe/Description: ".bold() + '<br>' + data[i].description + '<br><br>');
 
         }
 
@@ -67,8 +67,7 @@ $(document).ready(function () {
             data: data,                         // our data object
             dataType: 'text'                    // what type of data do we expect back from the server
         }).done(function (data, _, out) {
-            // $('#content').prepend('<img id="clock" src="' + stringVal + '" />' + '<br />' + '<br />' + '<div id="clock">' + "Food Item: " + foodItem + '<br />' + '<br />' + "Log Date: " + date + '<br />' + '<br />' + "Recipe/Description: " + '<br />' + '<br />' + foodDescription + '</div>');
-
+            window.location.href = "http://localhost:3000/landingpage";
 
         }).fail(function (data) {
 

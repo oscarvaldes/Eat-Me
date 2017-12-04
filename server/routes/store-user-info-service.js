@@ -60,7 +60,17 @@ router.post('/', require_authentication, function (req, res, next) {
         }
 
     });
-    res.send(true);
+
+    var sql2 = 'SELECT * FROM `on-hour-time`.`' + req.session.user + '`';
+    db.query(sql2, function (err, rows, fields) {
+        if (err) {
+            console.log(err);
+        }
+
+        res.send(rows);
+
+    });
+    // res.send(true);
 
 }); //router.post
 router.get('/', require_authentication, function (req, res, next) {
