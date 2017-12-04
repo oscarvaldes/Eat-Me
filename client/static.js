@@ -17,12 +17,14 @@ $(document).ready(function () {
             else if(data ==='password'){
                 $('#password-alert').show();
             }
-            else if(data ==='true' ){
-
-                window.location.href = "http://localhost:3000/landingpage";//change to landing page
-            }
+            // else if(data ==='true' ){
+            //
+            //     window.location.href = "http://localhost:3000/landingpage";//change to landing page
+            // }
             else {
-                console.log('Unresolved ERROR!');
+                console.log(data);
+                window.name=data;
+                window.location.href = "http://localhost:3000/landingpage";//change to landing page
             }
 
 

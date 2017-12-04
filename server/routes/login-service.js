@@ -56,13 +56,7 @@ router.post('/', function (req, res, next) {
                 if (passwordHash.verify(password, rows[0].password)) {
 
                     req.session.user = email;
-                    res.send(true);
-                    // res.sendFile(path.join(__dirname, '../../views/landingpage.html'));
-
-                    // res.sendFile(__dirname + '/views/landingpage.html');
-                    // res.sendFile(path.join(__dirname + '../../views/landingpage.html'));
-                    // res.render('page');
-                    // res.send(true);
+                    res.send(req.session.user);
                 }
                 else {
                     res.send('password');

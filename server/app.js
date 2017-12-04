@@ -8,6 +8,7 @@ var express = require('express'),
     landingpage = require('./routes/store-user-info-service'),
     login = require('./routes/login-service'),
     register = require('./routes/register-service'),
+    load =require('./routes/load-service'),
     moment = require('moment'),
     app = express();
 
@@ -34,6 +35,7 @@ app.use(express.static(path.join(__dirname, '../client')));
 app.use('/landingpage', landingpage);
 app.use('/login', login);
 app.use('/register', register);
+app.use('/load',load);
 
 app.use(function setAuthLocal(req, res, next) {
     if (req.session && req.session.user) {

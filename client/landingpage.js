@@ -1,7 +1,23 @@
 $(document).ready(function () {
 
+    //Load users personal blog data (if any)
+    data = {
+        email:window.name
+    };
+    $.ajax({
+        type: 'GET',                       // define the type of HTTP verb we want to use (POST for our form)
+        url: 'http://localhost:3000/load',           // the url where we want to POST
+        data: data,                         // our data object
+        dataType: 'text'                    // what type of data do we expect back from the server
+    }).done(function (data, _, out) {
+        // $('#content').prepend('<img id="clock" src="' + stringVal + '" />' + '<br />' + '<br />' + '<div id="clock">' + "Food Item: " + foodItem + '<br />' + '<br />' + "Log Date: " + date + '<br />' + '<br />' + "Recipe/Description: " + '<br />' + '<br />' + foodDescription + '</div>');
+        console.log('append here if any');
 
-    $('#createEvent').click(function () {
+    }).fail(function (data) {
+
+    });
+
+    $('#AddRecipe').click(function () {
 
         $('#mainCreateEvent').hide();
         $('.container').show();
@@ -19,27 +35,44 @@ $(document).ready(function () {
         $('#mainCreateEvent').show();
         $('.container').hide();
 
-        date = $('#datePicker').val();
-
         var foodItem;
         var foodDescription;
-        var date;
+        // var date;
         var fileName;
         var stringVal;
 
-        fileName = $('#getVal').val();
-        stringVal = fileName.toString();
+        // date = $('#datePicker').val();
 
-        console.log($('#getVal').val());
+        fileName = $('#getVal').val();
 
         foodItem = $('#FoodName').val();
         foodDescription = $('#description').val();
 
         //send data to specific route
 
+        data = {
+            // date: date,
+            fileName: fileName,
+            foodName: foodItem,
+            description: foodDescription
+
+        };
+        $.ajax({
+            type: 'POST',                       // define the type of HTTP verb we want to use (POST for our form)
+            url: 'http://localhost:3000/landingpage',           // the url where we want to POST
+            data: data,                         // our data object
+            dataType: 'text'                    // what type of data do we expect back from the server
+        }).done(function (data, _, out) {
+            // $('#content').prepend('<img id="clock" src="' + stringVal + '" />' + '<br />' + '<br />' + '<div id="clock">' + "Food Item: " + foodItem + '<br />' + '<br />' + "Log Date: " + date + '<br />' + '<br />' + "Recipe/Description: " + '<br />' + '<br />' + foodDescription + '</div>');
+
+
+        }).fail(function (data) {
+
+        });
+
 
         //With everything
-        $('#content').prepend('<img id="clock" src="' + stringVal + '" />' + '<br />' + '<br />' + '<div id="clock">' + "Food Item: " + foodItem + '<br />' + '<br />' + "Log Date: " + date + '<br />' + '<br />' + "Recipe/Description: " + '<br />' + '<br />' + foodDescription + '</div>');
+        //$('#content').prepend('<img id="clock" src="' + stringVal + '" />' + '<br />' + '<br />' + '<div id="clock">' + "Food Item: " + foodItem + '<br />' + '<br />' + "Log Date: " + date + '<br />' + '<br />' + "Recipe/Description: " + '<br />' + '<br />' + foodDescription + '</div>');
 
     });
 
@@ -50,7 +83,7 @@ $(document).ready(function () {
 
     });
 
-    $("#datePicker").datepicker();
+    // $("#datePicker").datepicker();
 
 
 });
