@@ -9,7 +9,6 @@ var express = require('express'),
     db = mysql.createConnection({
         host: 'localhost',
         user: 'root',
-        password: 'Blue$apph1re#2',
         database: 'on-hour-time',
         multipleStatements: 'true'
     }),

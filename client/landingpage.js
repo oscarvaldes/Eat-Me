@@ -6,7 +6,7 @@ $(document).ready(function () {
     };
     $.ajax({
         type: 'GET',                       // define the type of HTTP verb we want to use (POST for our form)
-        url: 'http://localhost:3000/load',           // the url where we want to POST
+        url: 'http://172.17.149.111:8080/load',           // the url where we want to POST
         data: data,                         // our data object
         dataType: 'text'                    // what type of data do we expect back from the server
     }).done(function (data, _, out) {
@@ -29,7 +29,7 @@ $(document).ready(function () {
     });
 
     $('#logout').click(function () {
-        window.location.href = "http://localhost:3000/logout";
+        window.location.href = "http://172.17.149.111:8080/logout";
 
     });//end of logout click
 
@@ -63,11 +63,11 @@ $(document).ready(function () {
         };
         $.ajax({
             type: 'POST',                       // define the type of HTTP verb we want to use (POST for our form)
-            url: 'http://localhost:3000/landingpage',           // the url where we want to POST
+            url: 'http://172.17.149.111:8080/landingpage',           // the url where we want to POST
             data: data,                         // our data object
             dataType: 'text'                    // what type of data do we expect back from the server
         }).done(function (data, _, out) {
-            window.location.href = "http://localhost:3000/landingpage";
+            window.location.href = "http://172.17.149.111:8080/landingpage";
 
         }).fail(function (data) {
 

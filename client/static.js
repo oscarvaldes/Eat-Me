@@ -7,7 +7,7 @@ $(document).ready(function () {
         };
         $.ajax({
             type: 'POST',                       // define the type of HTTP verb we want to use (POST for our form)
-            url: 'http://localhost:3000/login',           // the url where we want to POST
+            url: 'http://172.17.149.111:8080/login',           // the url where we want to POST
             data: data,                         // our data object
             dataType: 'text'                    // what type of data do we expect back from the server
         }).done(function (data, _, out) {
@@ -24,7 +24,7 @@ $(document).ready(function () {
             else {
                 console.log(data);
                 window.name=data;
-                window.location.href = "http://localhost:3000/landingpage";//change to landing page
+                window.location.href = "http://172.17.149.111:8080/landingpage";//change to landing page
             }
 
 
@@ -50,12 +50,12 @@ $(document).ready(function () {
             };
             $.ajax({
                 type: 'POST',                       // define the type of HTTP verb we want to use (POST for our form)
-                url: 'http://localhost:3000/register',           // the url where we want to POST
+                url: 'http://172.17.149.111:8080/register',           // the url where we want to POST
                 data: data,                         // our data object
                 dataType: 'text'                    // what type of data do we expect back from the server
             }).done(function (data, _, out) {
                 if (data === 'true') {
-                    window.location.href = "http://localhost:3000";
+                    window.location.href = "http://172.17.149.111:8080/";
                 }
                 else {
                     console.log('USER ALREADY EXISTS!');
